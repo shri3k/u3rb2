@@ -13,4 +13,5 @@
 - nodemon
 - eslint
 - jscrc
+- funcy // for pattern matching
 
