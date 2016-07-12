@@ -12,5 +12,5 @@
 - browserify
 - nodemon
 - eslint
-
+- jscrc
 
