@@ -15,6 +15,7 @@ import {
   match, RouterContext
 }
 from 'react-router';
+import configureStore from '../store';
 
 import routes from '../routes';
 import * as reducer from '../reducers';
@@ -35,7 +36,7 @@ function matchP(url) {
       } else if (redirection) {
         rej();
       } else if (props) {
-        let component = (<Provider store={stores}>
+        let component = (<Provider store={configureStore()}>
 					                  <RouterContext {...props} />
 				                  </Provider>);
         res(renderToString(component));

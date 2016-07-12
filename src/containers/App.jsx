@@ -1,33 +1,29 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-import InputBar from '../components/InputBar';
 import ListBox from './ListBox';
+import InputBarComponent from '../components/InputBarComponent';
 
-var InputBarCont = React.createClass({
-  componentDidMount: function(){
-    this.store = this.props.route.store;
-    this.unsubscribe = this.store.subscribe(()=>{
-      console.log(this.store.getState());
-      this.forceUpdate();
-    });
-  },
-  componentWillUnMount: function(){
-    this.unsubscribe();
-  },
-  addTodo: function(value){
-    this.store.dispatch({
-      type: 'ADD',
-      data: value 
-    });
-  },
-  render:function(){
-    return (
-      <div>
-        <InputBar addTodo={this.addTodo} />
-        <ListBox store={this.props.route.store}/>
-      </div>);
-  }
-});
+function mapDispatchToProps(dispatch){
+  return {
+    addTodo: function(value){
+      dispatch({
+        type: 'ADD',
+        data: value
+      });
+    }
+  };
+}
 
-export default InputBarCont;
+const Input = connect(null, mapDispatchToProps)(InputBarComponent);
 
+const App = ()=>{
+  return (
+    <div>
+      <Input/>
+      <ListBox/>
+    </div>
+  )
+};
+
+export default App;

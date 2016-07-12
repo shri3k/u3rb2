@@ -1,6 +1,6 @@
 import React from 'react';
 
-var InputBar = React.createClass({
+var InputBarComponent = React.createClass({
   add: function(e){
     e.preventDefault();
     this.props.addTodo(this.todoInput.value);
@@ -17,4 +17,4 @@ var InputBar = React.createClass({
   }
 });
 
-export default InputBar;
+export default InputBarComponent;
