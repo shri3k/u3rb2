@@ -1,12 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux';
-
+import {
+  connect
+} from 'react-redux';
 import ListBox from './ListBox';
 import InputBarComponent from '../components/InputBarComponent';
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
   return {
-    addTodo: function(value){
+    addTodo: function(value) {
       dispatch({
         type: 'ADD',
         data: value
@@ -17,7 +18,7 @@ function mapDispatchToProps(dispatch){
 
 const Input = connect(null, mapDispatchToProps)(InputBarComponent);
 
-const App = ()=>{
+const App = () => {
   return (
     <div>
       <Input/>

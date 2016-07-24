@@ -1,20 +1,22 @@
 import React from 'react';
+
 import {
   renderToString
-}
-from 'react-dom/server';
+} from 'react-dom/server';
+
 import {
   Provider
-}
-from 'react-redux';
+} from 'react-redux';
+
 import {
   createStore
-}
-from 'redux';
+} from 'redux';
+
 import {
-  match, RouterContext
-}
-from 'react-router';
+  match,
+  RouterContext
+} from 'react-router';
+
 import configureStore from '../store';
 
 import routes from '../routes';
@@ -45,5 +47,4 @@ function matchP(url) {
   });
 }
 
-export
-default matchP;
+export default matchP;
